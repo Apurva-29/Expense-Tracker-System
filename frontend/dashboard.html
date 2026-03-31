@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — Expense Tracker System</title>
+  <meta name="description" content="View your total income, total expenses, balance, and recent transactions." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="logo-icon">💰</div>
+      <span>Expense Tracker</span>
+    </div>
+
+    <ul class="navbar-nav">
+      <li><a href="dashboard.html"  class="nav-link active">🏠 Dashboard</a></li>
+      <li><a href="add-income.html" class="nav-link">➕ Income</a></li>
+      <li><a href="add-expense.html" class="nav-link">➖ Expense</a></li>
+      <li><a href="report.html"     class="nav-link">📊 Report</a></li>
+    </ul>
+
+    <div class="nav-user">
+      <div class="avatar" id="navAvatar">U</div>
+      <span id="navName">User</span>
+      <button class="btn-logout" onclick="logout()" id="logoutBtn">Logout</button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container page-enter">
+
+    <div class="page-header">
+      <div>
+        <h1>Dashboard</h1>
+        <p id="dashGreeting">Welcome back! Here's your financial overview.</p>
+      </div>
+      <div style="display:flex;gap:.75rem;">
+        <a href="add-income.html"  class="btn btn-success">+ Add Income</a>
+        <a href="add-expense.html" class="btn btn-danger">+ Add Expense</a>
+      </div>
+    </div>
+
+    <!-- Stat Cards -->
+    <div class="stats-grid">
+      <div class="stat-card income">
+        <div class="stat-icon">💵</div>
+        <div class="stat-info">
+          <div class="stat-label">Total Income</div>
+          <div class="stat-value" id="totalIncome">₹0.00</div>
+        </div>
+      </div>
+      <div class="stat-card expense">
+        <div class="stat-icon">💸</div>
+        <div class="stat-info">
+          <div class="stat-label">Total Expense</div>
+          <div class="stat-value" id="totalExpense">₹0.00</div>
+        </div>
+      </div>
+      <div class="stat-card balance">
+        <div class="stat-icon">💳</div>
+        <div class="stat-info">
+          <div class="stat-label">Balance</div>
+          <div class="stat-value" id="balance">₹0.00</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Transactions -->
+    <div class="card">
+      <div class="card-header">
+        <h2>Recent Transactions</h2>
+        <a href="report.html" style="font-size:.8rem;color:var(--navbar);font-weight:600;">View Report →</a>
+      </div>
+      <div class="table-wrapper">
+        <table id="recentTable">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Type</th>
+              <th>Category</th>
+              <th>Description</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody id="recentBody">
+            <tr><td colspan="5">
+              <div class="empty-state">
+                <div class="empty-icon">📋</div>
+                <p>Loading transactions…</p>
+              </div>
+            </td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

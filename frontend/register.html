@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register — Expense Tracker System</title>
+  <meta name="description" content="Create your free Expense Tracker System account and start managing your finances." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="auth-page">
+
+  <div class="auth-card page-enter">
+    <div class="auth-header">
+      <div class="auth-logo">📊</div>
+      <h1>Create Account</h1>
+      <p>Start tracking your finances today</p>
+    </div>
+
+    <div id="registerAlert" class="alert" style="display:none;"></div>
+
+    <form id="registerForm" novalidate>
+      <div class="form-group">
+        <label for="regName">Full Name</label>
+        <input id="regName" type="text" class="form-control"
+               placeholder="John Doe" required autocomplete="name" />
+      </div>
+
+      <div class="form-group">
+        <label for="regEmail">Email Address</label>
+        <input id="regEmail" type="email" class="form-control"
+               placeholder="you@example.com" required autocomplete="email" />
+      </div>
+
+      <div class="form-group">
+        <label for="regPassword">Password</label>
+        <input id="regPassword" type="password" class="form-control"
+               placeholder="At least 6 characters" required autocomplete="new-password" />
+      </div>
+
+      <div class="form-group">
+        <label for="regConfirm">Confirm Password</label>
+        <input id="regConfirm" type="password" class="form-control"
+               placeholder="Re-enter your password" required />
+      </div>
+
+      <button type="submit" id="registerBtn" class="btn btn-primary btn-block" style="margin-top:.5rem;">
+        Create Account
+      </button>
+    </form>
+
+    <div class="auth-footer">
+      Already have an account? <a href="index.html">Sign in</a>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

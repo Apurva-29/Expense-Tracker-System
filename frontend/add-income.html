@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Income — Expense Tracker System</title>
+  <meta name="description" content="Add a new income entry with category, amount, date, and description." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="logo-icon">💰</div>
+      <span>Expense Tracker</span>
+    </div>
+    <ul class="navbar-nav">
+      <li><a href="dashboard.html"   class="nav-link">🏠 Dashboard</a></li>
+      <li><a href="add-income.html"  class="nav-link active">➕ Income</a></li>
+      <li><a href="add-expense.html" class="nav-link">➖ Expense</a></li>
+      <li><a href="report.html"      class="nav-link">📊 Report</a></li>
+    </ul>
+    <div class="nav-user">
+      <div class="avatar" id="navAvatar">U</div>
+      <span id="navName">User</span>
+      <button class="btn-logout" onclick="logout()" id="logoutBtn">Logout</button>
+    </div>
+  </nav>
+
+  <div class="container page-enter">
+
+    <div class="page-header">
+      <div>
+        <h1>Add Income</h1>
+        <p>Record a new income entry</p>
+      </div>
+      <a href="dashboard.html" class="btn btn-outline">← Dashboard</a>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start;">
+
+      <!-- Add Income Form -->
+      <div class="form-card">
+        <div id="incomeAlert" class="alert" style="display:none;"></div>
+
+        <form id="addIncomeForm" novalidate>
+          <div class="form-group">
+            <label for="incomeCategory">Category</label>
+            <select id="incomeCategory" class="form-control" required>
+              <option value="">Select category…</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="incomeAmount">Amount (₹)</label>
+              <input id="incomeAmount" type="number" min="0.01" step="0.01"
+                     class="form-control" placeholder="0.00" required />
+            </div>
+            <div class="form-group">
+              <label for="incomeDate">Date</label>
+              <input id="incomeDate" type="date" class="form-control" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="incomeDesc">Description (optional)</label>
+            <input id="incomeDesc" type="text" class="form-control"
+                   placeholder="e.g. Monthly salary payment" />
+          </div>
+
+          <button type="submit" id="incomeBtn" class="btn btn-success btn-block" style="margin-top:.75rem;">
+            💵 Add Income
+          </button>
+        </form>
+      </div>
+
+      <!-- Income History -->
+      <div class="card">
+        <div class="card-header">
+          <h2>Income History</h2>
+        </div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Category</th>
+                <th>Amount</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="incomeTableBody">
+              <tr><td colspan="4">
+                <div class="empty-state">
+                  <div class="empty-icon">💵</div>
+                  <p>No income entries yet</p>
+                </div>
+              </td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category Management -->
+    <div class="card" style="margin-top:1.5rem;">
+      <div class="card-header">
+        <h2>Income Categories</h2>
+      </div>
+      <div class="card-body">
+        <div class="category-grid" id="incomeCategoryTags"></div>
+        <div class="divider" style="margin-top:1rem;">Add New Category</div>
+        <div style="display:flex;gap:.75rem;max-width:380px;">
+          <input id="newIncomeCategory" type="text" class="form-control"
+                 placeholder="e.g. Bonus" />
+          <button onclick="addCategory('income')" class="btn btn-primary" style="white-space:nowrap;">
+            + Add
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/income.js"></script>
+</body>
+</html>
