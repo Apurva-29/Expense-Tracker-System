@@ -1,6 +1,6 @@
 /* ── dashboard.js ───────────────────────────────────────────── */
 
-const API = 'http://localhost:5001/api';
+const API = '/api';
 
 // ── Auth guard ─────────────────────────────────────────────────
 const token = localStorage.getItem('et_token');

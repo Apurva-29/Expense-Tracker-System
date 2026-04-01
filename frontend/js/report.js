@@ -1,6 +1,6 @@
 /* ── report.js ──────────────────────────────────────────────── */
 
-const API = 'http://localhost:5001/api';
+const API = '/api';
 
 const token = localStorage.getItem('et_token');
 const user  = JSON.parse(localStorage.getItem('et_user') || '{}');

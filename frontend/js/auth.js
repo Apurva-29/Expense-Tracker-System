@@ -1,6 +1,6 @@
 /* ── auth.js — Login & Register logic ──────────────────────── */
 
-const API = 'http://localhost:5001/api';
+const API = '/api';
 
 // ── Helpers ────────────────────────────────────────────────────
 function showAlert(id, message, type = 'error') {
