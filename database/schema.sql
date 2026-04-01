@@ -1,6 +1,5 @@
 -- ============================================================
 --  Expense Tracker System — Database Schema
---  DBMS Mini Project
 -- ============================================================
 
 CREATE DATABASE IF NOT EXISTS expense_tracker;
@@ -74,8 +73,4 @@ CREATE TABLE IF NOT EXISTS Expense (
     ON DELETE SET NULL
 );
 
--- ────────────────────────────────────────────
---  Sample seed data (optional – remove if not needed)
--- ────────────────────────────────────────────
--- INSERT INTO Users (name, email, password) VALUES
---   ('Demo User', 'demo@example.com', 'hashed_password_here');
+
