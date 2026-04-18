@@ -228,13 +228,3 @@ All `/api/*` routes (except auth) require the `Authorization: Bearer <token>` he
 3. User logs in → receives a signed **JWT** (valid 7 days)
 4. JWT is stored in `localStorage` and sent as `Authorization: Bearer <token>` on every request
 5. Protected routes verify the token via `authMiddleware.js`
-
----
-
-## 📄 License
-
-This project is for educational purposes — DBMS Mini Project.
-
----
-
-> Made with ❤️ using Node.js, Express, MySQL, and Vanilla JS
